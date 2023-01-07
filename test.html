@@ -10,17 +10,20 @@
 
     <body>
         <article>
-            <div class="records-categories">
-                <h1>Trackmania Records</h1>
+            <div class="manage">
+                <h1>Add product:</h1>
 
-                <h2>Sessions:</h2>
-                <div class="records-categories-list">
-                    <a href="2023-winter">2023 Winter</a>
-                    <a href="2023-winter">2023 Winter</a>
-                    <a href="2023-winter">2023 Winter</a>
-                </div>
+                <form method="post">
+                    <input type="hidden" name="season_id">
+                    <label class="form-label" for="season_year">Year:</label>
+                    <input class="form-control" type="number"
+                           name="season_year" id="season_year">
+                    <label class="form-label" for="season_name">Season:</label>
+                    <input class="form-control" type="text"
+                           name="season_name" id="season_name">
+                    <input class="btn btn-primary mt-10" type="submit" value="Add product">
+                </form>
             </div>
-
         </article>
     </body>
 </html>

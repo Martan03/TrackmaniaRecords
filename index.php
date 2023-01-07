@@ -11,6 +11,7 @@ function autoloadFunction(string $class) : void
 
 spl_autoload_register("autoloadFunction");
 
+Db::connect("127.0.0.1", "trackmania_db", "root", "");
 session_start();
 
 $router = new RouterPresenter();

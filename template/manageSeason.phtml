@@ -1,0 +1,18 @@
+<div class="manage">
+    <h1>Add product:</h1>
+
+    <form method="post">
+        <input type="hidden" name="season_id">
+        <label class="form-label" for="season_year">
+            Year: <span>*</span>
+        </label>
+        <input class="form-control <?= isset($error['year']) ? 'invalid' : '' ?>"
+               type="number" name="season_year" id="season_year">
+        <label class="form-label" for="season_name">
+            Season:  <span>*</span>
+        </label>
+        <input class="form-control <?= isset($error['name']) ? 'invalid' : '' ?>"
+               type="text" name="season_name" id="season_name">
+        <input class="btn btn-primary mt-15" type="submit" value="Add product">
+    </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="records-categories">
+    <h1>Trackmania Records</h1>
+
+    <button class="btn btn-primary"
+            onclick="window.location.href='/manage-season'">
+        Add season
+    </button>
+
+    <h2>Seasons:</h2>
+    <div class="records-categories-list">
+        <?php if (empty($seasons)): ?>
+            <h3>No seasons found</h3>
+        <?php endif; ?>
+        <?php foreach ($seasons as $season): ?>
+            <a href="/seasons/<?= $season['season_year'] . "/" . $season['season_name'] ?>">
+                <?= $season['season_year'] . ' ' . $season['season_name'] ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</div>

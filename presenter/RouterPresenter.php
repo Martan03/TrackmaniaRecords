@@ -11,7 +11,7 @@ class RouterPresenter extends Presenter
             unset($parsedURL[count($parsedURL) - 1]);
         
         if (empty($parsedURL[0]))
-            $this->redirect("records");
+            $this->redirect("seasons");
 
         $_SESSION['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         require_once("lang/" . $_SESSION['lang'] . ".php");

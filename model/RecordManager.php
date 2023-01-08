@@ -73,7 +73,7 @@ class RecordManager
         return array(
             'record_id' => '',
             'record_holder' => '',
-            'record_time' => 'No record',
+            'record_time' => '',
             'record_season' => $season,
             'record_level' => $level
         );

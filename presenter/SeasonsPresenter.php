@@ -5,6 +5,7 @@ class SeasonsPresenter extends Presenter
     public function process(array $params): void
     {
         $seasonManager = new SeasonManager();
+        $this->data['lang'] = getLang();
         if (empty($params))
         {
             $this->header = array(

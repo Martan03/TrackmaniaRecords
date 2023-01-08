@@ -26,6 +26,7 @@ class ManageRecordPresenter extends Presenter
         $seasonManager = new SeasonManager();
         $this->data['season'] = $seasonManager->getSeason($params[0], $params[1]);
         $this->data['level'] = $params[2];
+        $this->data['lang'] = getLang();
 
         $this->header = array(
             'title' => 'Manage record',

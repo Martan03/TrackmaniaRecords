@@ -7,7 +7,11 @@
                     $season['season_name'] . '/' . $record['record_level'] ?>">
                 <b><?= sprintf("%02d", $record['record_level']) ?></b>
                 <i><?= $record['record_holder'] ?></i>
-                <p><?= $record['record_time'] ?></p>
+                <?php if (empty($record['record_time']) || $record['record_time'] == ''): ?>
+                    <p><?= $lang['no-record'] ?></p>
+                <?php else: ?>
+                    <p><?= $record['record_time'] ?></p>
+                <?php endif; ?>
             </a>
         <?php endforeach; ?>
     </div>

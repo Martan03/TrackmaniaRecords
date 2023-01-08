@@ -1,5 +1,5 @@
 <div class="manage">
-    <h1>Add season:</h1>
+    <h1><?= $lang['add-season'] ?>:</h1>
 
     <form method="post">
         <label class="form-label">
@@ -7,12 +7,12 @@
         </label>
         <input type="hidden" name="season_id">
         <label class="form-label" for="season_year">
-            Year: <span>*</span>
+            <?= $lang['year'] ?>: <span>*</span>
         </label>
         <input class="form-control <?= isset($error['year']) ? 'invalid' : '' ?>"
                type="number" name="season_year" id="season_year">
         <label class="form-label" for="season_name">
-            Season:  <span>*</span>
+            <?= $lang['time'] ?>: <span>*</span>
         </label>
         <input class="form-control <?= isset($error['name']) ? 'invalid' : '' ?>"
                type="text" name="season_name" id="season_name">

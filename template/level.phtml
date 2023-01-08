@@ -4,12 +4,12 @@
 
     <button class="btn btn-primary"
             onclick="window.location.href='/manage-record/<?= $url ?>'">
-        Add record
+        <?= $lang['add-record'] ?>
     </button>
 
     <div class="records-list">
         <?php if (!isset($records) || empty($records)): ?>
-            <h3>No record has been set yet</h3>
+            <h3><?= $lang['no-records'] ?></h3>
         <?php endif; ?>
         <?php foreach ($records as $record): ?>
             <a href="">

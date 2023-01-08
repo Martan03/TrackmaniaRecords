@@ -23,6 +23,7 @@ class ManageSeasonPresenter extends Presenter
             'keywords' => ''
         );
 
+        $this->data['lang'] = getLang();
         $this->view = 'manageSeason';
     }
 }

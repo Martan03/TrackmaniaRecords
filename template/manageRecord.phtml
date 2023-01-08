@@ -1,5 +1,5 @@
 <div class="manage">
-    <h1>Add record:</h1>
+    <h1><?= $lang['add-record'] ?>:</h1>
     <h2><?= $season['season_year'] . ' ' . $season['season_name']
             . ' - ' . sprintf("%02d", $level) ?></h2>
 
@@ -8,12 +8,12 @@
         <input type="hidden" name="record_season" value="<?= $season['season_id'] ?>">
         <input type="hidden" name="record_level" value="<?= $level ?>">
         <label class="form-label" for="record_holder">
-            Holder: <span>*</span>
+            <?= $lang['holder'] ?>: <span>*</span>
         </label>
         <input class="form-control <?= isset($errors['holder']) ? 'invalid' : '' ?>"
                 type="text" name="record_holder" id="record_holder">
         <label class="form-label" for="record_time">
-            Time:  <span>*</span>
+            <?= $lang['time'] ?>:  <span>*</span>
         </label>
         <input class="form-control <?= isset($errors['name']) ? 'invalid' : '' ?>"
                 type="text" name="record_time" id="record_time">

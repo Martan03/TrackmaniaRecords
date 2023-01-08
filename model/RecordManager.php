@@ -78,4 +78,51 @@ class RecordManager
             'record_level' => $level
         );
     }
+
+    /**
+     * Inserts given record to database
+     * @param array $record to be inserted
+     */
+    public function addRecord(array $record) : void
+    {
+        Db::insert("records", $record);
+    }
+
+    /**
+     * Updates given record
+     * @param array $record to be updated
+     */
+    public function editRecord(array $record) : void
+    {
+        Db::update("records", $record,
+                   "WHERE `record_id` = ?",
+                   array($record['record_id']));
+    }
+
+    /**
+     * Deletes record from database by given id
+     * @param int $id of the record
+     */
+    public function removeRecord(int $id) : void
+    {
+        Db::query('
+            DELETE FROM `records`
+            WHERE `record_id` = ?
+        ', array($id));
+    }
+
+    public function submitDialog(array $record) : array
+    {
+        $errors = array();
+        if (!isset($record['record_holder']) || empty($record['record_holder']))
+            $errors['holder'] = 'Invalid';
+        if (!isset($record['record_time']) || empty($record['record_time']))
+            $errors['holder'] = 'Invalid';
+        
+        if (!empty($errors))
+            return $errors;
+        
+        $this->addRecord($record);
+        return $errors;
+    }
 }

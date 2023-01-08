@@ -1,0 +1,22 @@
+<div class="manage">
+    <h1>Add record:</h1>
+    <h2><?= $season['season_year'] . ' ' . $season['season_name']
+            . ' - ' . sprintf("%02d", $level) ?></h2>
+
+    <form method="post">
+        <input type="hidden" name="record_id">
+        <input type="hidden" name="record_season" value="<?= $season['season_id'] ?>">
+        <input type="hidden" name="record_level" value="<?= $level ?>">
+        <label class="form-label" for="record_holder">
+            Holder: <span>*</span>
+        </label>
+        <input class="form-control <?= isset($errors['holder']) ? 'invalid' : '' ?>"
+                type="text" name="record_holder" id="record_holder">
+        <label class="form-label" for="record_time">
+            Time:  <span>*</span>
+        </label>
+        <input class="form-control <?= isset($errors['name']) ? 'invalid' : '' ?>"
+                type="text" name="record_time" id="record_time">
+        <input class="btn btn-primary mt-15" type="submit" value="Add record">
+    </form>
+</div>

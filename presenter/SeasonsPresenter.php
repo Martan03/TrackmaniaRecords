@@ -51,6 +51,9 @@ class SeasonsPresenter extends Presenter
 
         $this->data['records'] = $recordManager->getRecordsBySeasonLevel($season['season_id'], $params[2]);
         $this->data['level'] = sprintf("%02d", $params[2]);
+        $this->data['url'] = $season['season_year'] . '/'
+                            . $season['season_name'] . '/'
+                            . $params[2];
         $this->header['title'] .= ' - ' . $this->data['level'];
         $this->view = 'level';
     }

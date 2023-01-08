@@ -1,24 +1,28 @@
 <?php
 
-class ManageSeasonPresenter extends Presenter
+class ManageRecordPresenter extends Presenter
 {
     public function process(array $params) : void
     {
         if ($_POST)
         {
-            if (!isset($_POST['season_year']) || empty($_POST['season_year']))
-                $this->data['error']['year'] = "Year must be filled in";
-            if (!isset($_POST['season_name']) || empty($_POST['season_name']))
-                $this->data['error']['name'] = "Name must be filled in";
+            $recordManager = new RecordManager();
+            $this->data['errors'] = $recordManager->submitDialog($_POST);
 
-            if (!isset($this->data['error']) && empty($this->data['error']))
-            {
-                $seasonManager = new SeasonManager();
-                $seasonManager->submitDialog($_POST);
+            if (!empty($this->data['errors']))
                 $this->redirect("seasons/" . $_POST['season_year'] . 
                                 "/" . $_POST['season_name']);
-            }
         }
+
+        if (count($params) != 3)
+        {
+            $this->redirect('error');
+            return;
+        }
+
+        $seasonManager = new SeasonManager();
+        $this->data['season'] = $seasonManager->getSeason($params[0], $params[1]);
+        $this->data['level'] = $params[2];
 
         $this->header = array(
             'title' => 'Manage record',
@@ -26,6 +30,6 @@ class ManageSeasonPresenter extends Presenter
             'keywords' => ''
         );
 
-        $this->view = 'manageSeason';
+        $this->view = 'manageRecord';
     }
 }

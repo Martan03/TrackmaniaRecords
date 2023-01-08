@@ -65,7 +65,7 @@ class SeasonManager
     public function editSeason(array $season) : void
     {
         Db::update("seasons", $season,
-                   "WHERE season_id = ?",
+                   "WHERE `season_id` = ?",
                    array($season['season_id']));
     }
 
@@ -77,7 +77,7 @@ class SeasonManager
     {
         Db::query('
             DELETE FROM `seasons`
-            WHERE season_id = ?
+            WHERE `season_id` = ?
         ', array($id));
     }
 

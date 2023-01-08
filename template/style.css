@@ -16,7 +16,7 @@ article {
     width: 100%;
 }
 
-.records-categories, .manage {
+.records-categories, .manage, .records {
     width: fit-content;
     margin: auto;
 }
@@ -204,4 +204,23 @@ form {
 
 .mt-15 {
     margin-top: 15px;
+}
+
+.records-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.records-list a {
+    text-decoration: none;
+    color:rgb(220, 220, 220);
+    margin-bottom: 5px;
+    font-size: 18px;
+    background-color: #303e4e;
+    padding: 3px 7px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }

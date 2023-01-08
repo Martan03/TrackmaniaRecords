@@ -1,0 +1,21 @@
+<div class="records">
+    <h1><?= $season['season_year'] . ' ' . $season['season_name']
+            . ' - ' . $level ?></h1>
+
+    <button class="btn btn-primary"
+            onclick="window.location.href='/manage-record'">
+        Add record
+    </button>
+
+    <div class="records-list">
+        <?php if (!isset($records) || empty($records)): ?>
+            <h3>No record has been set yet</h3>
+        <?php endif; ?>
+        <?php foreach ($records as $record): ?>
+            <a href="">
+                <i>BonnyAD9</i>
+                <p>52.932</p>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</div>

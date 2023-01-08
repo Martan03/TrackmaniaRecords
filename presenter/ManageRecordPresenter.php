@@ -21,7 +21,7 @@ class ManageSeasonPresenter extends Presenter
         }
 
         $this->header = array(
-            'title' => 'Manage season',
+            'title' => 'Manage record',
             'description' => '',
             'keywords' => ''
         );

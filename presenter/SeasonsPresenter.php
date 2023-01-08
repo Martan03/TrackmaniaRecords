@@ -19,7 +19,7 @@ class SeasonsPresenter extends Presenter
             return;
         }
 
-        if (count($params) != 2)
+        if (count($params) < 2 || count($params) > 3)
         {
             $this->redirect("error");
             return;
@@ -39,6 +39,19 @@ class SeasonsPresenter extends Presenter
             'keywords' => ''
         );
 
-        $this->view = 'records';
+        $recordManager = new RecordManager();
+        $this->data['season'] = $season;
+
+        if (count($params) == 2)
+        {
+            $this->data['records'] = $recordManager->getSeasonLevelsRecords($season['season_id']);
+            $this->view = 'records';
+            return;
+        }
+
+        $this->data['records'] = $recordManager->getRecordsBySeasonLevel($season['season_id'], $params[2]);
+        $this->data['level'] = sprintf("%02d", $params[2]);
+        $this->header['title'] .= ' - ' . $this->data['level'];
+        $this->view = 'level';
     }
 }

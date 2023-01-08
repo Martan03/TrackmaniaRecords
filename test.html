@@ -10,19 +10,20 @@
 
     <body>
         <article>
-            <div class="manage">
-                <h1>Add product:</h1>
+            <div class="records">
+                <h1>2023 Winter - 01</h1>
 
-                <form method="post">
-                    <input type="hidden" name="season_id">
-                    <label class="form-label" for="season_year">Year:</label>
-                    <input class="form-control" type="number"
-                           name="season_year" id="season_year">
-                    <label class="form-label" for="season_name">Season:</label>
-                    <input class="form-control" type="text"
-                           name="season_name" id="season_name">
-                    <input class="btn btn-primary mt-10" type="submit" value="Add product">
-                </form>
+                <button class="btn btn-primary"
+                        onclick="window.location.href='/manage-season'">
+                    Add record
+                </button>
+
+                <div class="records-list">
+                    <a href="">
+                        <i>BonnyAD9</i>
+                        <p>52.932</p>
+                    </a>
+                </div>
             </div>
         </article>
     </body>

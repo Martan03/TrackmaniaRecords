@@ -13,8 +13,8 @@
         <?php endif; ?>
         <?php foreach ($records as $record): ?>
             <a href="">
-                <i>BonnyAD9</i>
-                <p>52.932</p>
+                <i><?= $record['record_holder'] ?></i>
+                <p><?= $record['record_time'] ?></p>
             </a>
         <?php endforeach; ?>
     </div>

@@ -9,9 +9,12 @@ class ManageRecordPresenter extends Presenter
             $recordManager = new RecordManager();
             $this->data['errors'] = $recordManager->submitDialog($_POST);
 
-            if (!empty($this->data['errors']))
-                $this->redirect("seasons/" . $_POST['season_year'] . 
-                                "/" . $_POST['season_name']);
+            if (empty($this->data['errors']))
+            {
+                $this->redirect("seasons/" . $params[0] . 
+                                "/" . $params[1] . "/" . $params[2]);
+                return;
+            }
         }
 
         if (count($params) != 3)

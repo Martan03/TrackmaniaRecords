@@ -7,7 +7,7 @@ class RecordManager
      * @param int $id of the record to be loaded
      * @return array loaded records, null if not found
      */
-    public function getRecord(int $id) : array
+    public function getRecord(int $id) : ?array
     {
         $record = Db::queryOne('
             SELECT *
@@ -31,7 +31,7 @@ class RecordManager
             SELECT *
             FROM `records`
             WHERE `record_season` = ? AND `record_level` = ?
-            ORDER BY `record_time` DESC
+            ORDER BY `record_time` ASC
         ', array($season, $level));
     }
 
@@ -57,7 +57,7 @@ class RecordManager
                 $records[$i + 1] = $this->getNotSetRecord($season, $i + 1);
                 continue;
             }
-            $records[$i + 1] = $rec['record_time'];
+            $records[$i + 1] = $rec;
         }
         return $records;
     }
@@ -111,6 +111,11 @@ class RecordManager
         ', array($id));
     }
 
+    /**
+     * Adds or edits record
+     * @param array $record to be submited
+     * @return array errors array
+     */
     public function submitDialog(array $record) : array
     {
         $errors = array();

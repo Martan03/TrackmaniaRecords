@@ -8,7 +8,7 @@ class SeasonManager
      * @param string $name of the season
      * @return array loaded season, returns null if not found
      */
-    public function getSeason(string $year, string $name) : array
+    public function getSeason(string $year, string $name) : ?array
     {
         $season = Db::queryOne('
             SELECT *
@@ -25,7 +25,7 @@ class SeasonManager
      * @param int $id of season to be loaded
      * @return array loaded season, returns null if not found
      */
-    public function getSeasonById(int $id) : array
+    public function getSeasonById(int $id) : ?array
     {
         $season = Db::queryOne('
             SELECT *
@@ -84,26 +84,36 @@ class SeasonManager
     /**
      * Adds or edits season
      * @param array $season data
-     * @return string error message
+     * @return array errors array
      */
-    public function submitDialog(array $season) : string
+    public function submitDialog(array $season) : array
     {
+        $errors = array();
+
+        if (!isset($_POST['season_year']) || empty($_POST['season_year']))
+            $errors['year'] = "Invalid";
+        if (!isset($_POST['season_name']) || empty($_POST['season_name']))
+            $errors['name'] = "Name must be filled in";
+
         $exists = $this->getSeason($season['season_year'], $season['season_name']);
+        
+        if (!empty($errors))
+            return $errors;
 
         if (isset($season['season_id']) && !empty($season['season_id']))
         {
             $this->editSeason($season);
-            return "";
+            return array();
         }
 
         if ($exists)
         {
             if ($_SESSION['lang'] == 'cs')
-                return "Tato sezóna již existuje";
-            return "This season already exists";
+                return array("exists" => "Tato sezóna již existuje");
+            return array("exists" => "This season already exists");
         }
 
         $this->addSeason($season);
-        return "";
+        return array();
     }
 }

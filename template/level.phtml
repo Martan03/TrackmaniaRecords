@@ -1,6 +1,13 @@
 <div class="records">
-    <h1><?= $season['season_year'] . ' ' . $season['season_name']
-            . ' - ' . $level ?></h1>
+    <h1>
+        <a href="/seasons/<?= $season['season_year'] . '/' . $season['season_name'] ?>">
+            <?= $season['season_year'] . ' ' . $season['season_name'] ?>
+        </a>
+        -
+        <a href="/seasons/<?= $season['season_year'] . '/' . $season['season_name'] . '/' . $level ?>">
+            <?= $level ?>
+        </a>
+    </h1>
 
     <button class="btn btn-primary"
             onclick="window.location.href='/manage-record/<?= $url ?>'">

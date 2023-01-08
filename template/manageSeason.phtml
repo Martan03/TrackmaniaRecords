@@ -12,10 +12,10 @@
         <input class="form-control <?= isset($error['year']) ? 'invalid' : '' ?>"
                type="number" name="season_year" id="season_year">
         <label class="form-label" for="season_name">
-            <?= $lang['time'] ?>: <span>*</span>
+            <?= $lang['season'] ?>: <span>*</span>
         </label>
         <input class="form-control <?= isset($error['name']) ? 'invalid' : '' ?>"
                type="text" name="season_name" id="season_name">
-        <input class="btn btn-primary mt-15" type="submit" value="Add season">
+        <input class="btn btn-primary mt-15" type="submit" value="<?= $lang['add-season'] ?>">
     </form>
 </div>

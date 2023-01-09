@@ -6,10 +6,12 @@
             <h3><?= $lang['no-statistics'] ?></h3>
         <?php endif; ?>
         <?php foreach ($statistics as $statistic): ?>
-            <a href="">
-                <i><?= $statistic['record_holder'] ?></i>
+            <div class="records-list-item no-remove">
+                <a href="/profile/<?= $statistic['record_holder'] ?>">
+                    <i><?= $statistic['record_holder'] ?></i>
+                </a>
                 <p><?= $statistic['record_number'] ?></p>
-            </a>
+            </div>
         <?php endforeach; ?>
     </div>
 </div>

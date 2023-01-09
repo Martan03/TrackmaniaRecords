@@ -15,6 +15,7 @@ function getLang()
         'holder' => 'Držitel',
         'time' => 'Čas',
         'statistics' => 'Statistiky',
-        'no-statistics' => 'Žádné statistiky'
+        'no-statistics' => 'Žádné statistiky',
+        'records' => 'Rekordy'
     );
 }

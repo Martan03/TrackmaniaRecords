@@ -5,6 +5,7 @@ class SeasonsPresenter extends Presenter
     public function process(array $params): void
     {
         $seasonManager = new SeasonManager();
+        $recordManager = new RecordManager();
         $this->data['lang'] = getLang();
         if (empty($params))
         {
@@ -18,6 +19,12 @@ class SeasonsPresenter extends Presenter
             $this->view = 'seasons';
 
             return;
+        }
+
+        if (count($params) == 5 && $params[3] == 'remove')
+        {
+            $recordManager->removeRecord($params[4]);
+            $this->redirect('seasons/' . $params[0] . '/' . $params[1] . '/' . $params[2]);
         }
 
         if (count($params) < 2 || count($params) > 3)
@@ -40,7 +47,6 @@ class SeasonsPresenter extends Presenter
             'keywords' => ''
         );
 
-        $recordManager = new RecordManager();
         $this->data['season'] = $season;
 
         if (count($params) == 2)

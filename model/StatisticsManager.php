@@ -39,6 +39,48 @@ class StatisticsManager
     }
 
     /**
+     * Gets all records by given player
+     * @param string $player name
+     * @return array records list
+     */
+    public function getPlayerRecords(string $player) : array
+    {
+        $seasonManager = new SeasonManager();
+        $seasons = $seasonManager->getSeasons();
+        $stats = array();
+
+        foreach ($seasons as $season)
+        {
+            $stats[$season['season_id']] = $this->getPlayerSeasonRecords($player, $season);
+        }
+
+        return $stats;
+    }
+
+    /**
+     * Gets all records by given player in given season
+     * @param string $player name
+     * @param array $season to be searched
+     * @return array records list
+     */
+    public function getPlayerSeasonRecords(string $player, array $season) : array
+    {
+        $recordManager = new RecordManager();
+        $statistics = array();
+
+        $records = $recordManager->getSeasonLevelsRecords($season['season_id']);
+
+        foreach ($records as $record)
+        {
+            if ($record['record_holder'] != $player)
+                continue;
+            array_push($statistics, $record);
+        }
+
+        return $statistics;
+    }
+
+    /**
      * Checks if value is in array on key
      * @param string $key of the array
      * @param string $val value to be found

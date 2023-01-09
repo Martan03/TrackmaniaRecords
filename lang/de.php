@@ -15,6 +15,7 @@ function getLang()
         'holder' => 'Rekordhalter',
         'time' => 'Zeit',
         'statistics' => 'Statistiken',
-        'no-statistics' => 'Keine Statistik'
+        'no-statistics' => 'Keine Statistik',
+        'records' => 'Aufzeichnungen'
     );
 }

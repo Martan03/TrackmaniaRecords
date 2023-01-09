@@ -15,6 +15,7 @@ function getLang()
         'holder' => 'Holder',
         'time' => 'Time',
         'statistics' => 'Statistics',
-        'no-statistics' => 'No statistics'
+        'no-statistics' => 'No statistics',
+        'records' => 'Records'
     );
 }

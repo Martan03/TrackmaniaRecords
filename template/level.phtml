@@ -19,10 +19,24 @@
             <h3><?= $lang['no-records'] ?></h3>
         <?php endif; ?>
         <?php foreach ($records as $record): ?>
-            <a href="">
-                <i><?= $record['record_holder'] ?></i>
+            <div class="records-list-item">
+                <a href="/profile/<?= $record['record_holder'] ?>"><i><?= $record['record_holder'] ?></i></a>
                 <p><?= $record['record_time'] ?></p>
+                <img onclick="show_remove('/seasons/<?= $url . '/remove/' . $record['record_id'] ?>')"
+                     src="/assets/bin-icon.png" alt="Remove">
             </a>
         <?php endforeach; ?>
+
     </div>
 </div>
+<div class="remove">
+    <div class="remove-tab">
+        <p>Are you sure you want to remove this record?</p>
+        <div class="remove-tab-buttons">
+            <button class="btn btn-primary" onclick="remove()">Remove</button>
+            <button class="btn btn-gray" onclick="hide_remove()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="/template/app.js"></script>

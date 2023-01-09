@@ -3,7 +3,7 @@
 
     <div class="records-list">
         <?php foreach ($records as $record): ?>
-            <a href="/seasons/<?= $season['season_year'] . '/' . 
+            <a class="records-list-item" href="/seasons/<?= $season['season_year'] . '/' . 
                     $season['season_name'] . '/' . $record['record_level'] ?>">
                 <b><?= sprintf("%02d", $record['record_level']) ?></b>
                 <i><?= $record['record_holder'] ?></i>

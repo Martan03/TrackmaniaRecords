@@ -46,6 +46,7 @@ class SeasonManager
         return Db::queryAll('
             SELECT *
             FROM `seasons`
+            ORDER BY `season_year` DESC
         ');
     }
 

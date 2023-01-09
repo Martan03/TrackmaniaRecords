@@ -9,25 +9,27 @@
     </head>
 
     <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/seasons">Seasons</a>
+                </li>
+                <li>
+                    <a href="/statistics">Statistics</a>
+                </li>
+            </ul>
+        </nav>
+
         <article>
             <div class="manage">
-                <h1><a href="">Test</a>Add record:</h1>
-                <h2>2023 Winter - 01</h2>
+                <h1>Statistics:</h1>
 
-                <form method="post">
-                    <input type="hidden" name="season_id">
-                    <label class="form-label" for="season_year">
-                        Holder: <span>*</span>
-                    </label>
-                    <input class="form-control <?= isset($error['year']) ? 'invalid' : '' ?>"
-                           type="number" name="season_year" id="season_year">
-                    <label class="form-label" for="season_name">
-                        Time:  <span>*</span>
-                    </label>
-                    <input class="form-control <?= isset($error['name']) ? 'invalid' : '' ?>"
-                           type="text" name="season_name" id="season_name">
-                    <input class="btn btn-primary mt-15" type="submit" value="Add record">
-                </form>
+                <div class="records-list">
+                    <a href="">
+                        <i>BonnyAD9</i>
+                        <p>20</p>
+                    </a>
+                </div>
             </div>
         </article>
     </body>

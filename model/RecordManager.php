@@ -20,6 +20,18 @@ class RecordManager
     }
 
     /**
+     * Loads every records from database
+     * @return array loaded records
+     */
+    public function getRecords() : array
+    {
+        return Db::queryAll('
+            SELECT *
+            FROM `records`
+        ');
+    }
+
+    /**
      * Loads all records from given level and season from database
      * @param int $id of the season
      * @param int $level where record have been set

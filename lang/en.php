@@ -13,6 +13,8 @@ function getLang()
         'no-records' => 'No records',
         'add-record' => 'Add record',
         'holder' => 'Holder',
-        'time' => 'Time'
+        'time' => 'Time',
+        'statistics' => 'Statistics',
+        'no-statistics' => 'No statistics'
     );
 }

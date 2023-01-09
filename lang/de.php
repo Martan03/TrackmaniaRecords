@@ -13,6 +13,8 @@ function getLang()
         'no-records' => 'Keine Aufzeichnungen',
         'add-record' => 'Eintrag Aufzeichnungen',
         'holder' => 'Rekordhalter',
-        'time' => 'Zeit'
+        'time' => 'Zeit',
+        'statistics' => 'Statistiken',
+        'no-statistics' => 'Keine Statistik'
     );
 }

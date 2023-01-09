@@ -13,6 +13,8 @@ function getLang()
         'no-records' => 'Žádný rekordy',
         'add-record' => 'Přidat rekord',
         'holder' => 'Držitel',
-        'time' => 'Čas'
+        'time' => 'Čas',
+        'statistics' => 'Statistiky',
+        'no-statistics' => 'Žádné statistiky'
     );
 }

@@ -32,6 +32,7 @@ class RouterPresenter extends Presenter
         $this->data['title'] = $this->presenter->header['title'];
         $this->data['description'] = $this->presenter->header['description'];
         $this->data['keywords'] = $this->presenter->header['keywords'];
+        $this->data['lang'] = getLang();
 
         $this->view = 'layout';
     }

@@ -1,0 +1,15 @@
+<div class="manage">
+    <h1><?= $lang['statistics'] ?>:</h1>
+
+    <div class="records-list">
+        <?php if (!isset($statistics) || empty($statistics)): ?>
+            <h3><?= $lang['no-statistics'] ?></h3>
+        <?php endif; ?>
+        <?php foreach ($statistics as $statistic): ?>
+            <a href="">
+                <i><?= $statistic['record_holder'] ?></i>
+                <p><?= $statistic['record_number'] ?></p>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</div>

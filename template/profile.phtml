@@ -6,14 +6,16 @@
         <h3><?= $lang['no-records'] ?></h3>
     <?php endif; ?>
     <?php foreach ($seasons as $season): ?>
-        <h3><?= $season['season_year'] . ' ' . $season['season_name'] ?></h3>
-        <div class="records-list">
-            <?php foreach ($records[$season['season_id']] as $record): ?>
-                <div class="records-list-item no-remove">
-                    <b><?= $record['record_level'] ?></b>
-                    <p><?= $record['record_time'] ?></p>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <?php if (isset($records[$season['season_id']]) && !empty($records[$season['season_id']])): ?>
+            <h3><?= $season['season_year'] . ' ' . $season['season_name'] ?></h3>
+            <div class="records-list">
+                <?php foreach ($records[$season['season_id']] as $record): ?>
+                    <div class="records-list-item no-remove">
+                        <b><?= $record['record_level'] ?></b>
+                        <p><?= $record['record_time'] ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     <?php endforeach; ?>
 </div>

@@ -42,7 +42,7 @@ On this page you can see all records currently hold by this player.
 
 ![image](https://user-images.githubusercontent.com/46300167/211412262-6d2c8801-a53a-42ff-8718-a50168c0333c.png)
 
-Last page on this website is Statistics. Currently there is just my statistic and that is number of records hold by each player.
+Last page on this website is Statistics. Currently there is just one statistic and that is number of records hold by each player.
 I'd like to add more statistics though.
 
 ## Links

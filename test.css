@@ -317,3 +317,34 @@ form {
     justify-content: center;
     gap: 15px;
 }
+
+.top-list {
+    width: fit-content;
+}
+
+.levels {
+    display: inline-block;
+    width: 100%;
+}
+
+.levels-section {
+    float: left;
+}
+
+.level-section-item {
+    margin: 12px 6px;
+    font-size: 18px;
+    background-color: #303e4e;
+    padding: 7px 10px;
+    border-radius: 15px 0;
+    transform: skewX(-10deg);
+    filter: drop-shadow(2px 2px 1px black);
+}
+
+.level-section-item-content {
+    transform: skewX(10deg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}

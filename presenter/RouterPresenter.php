@@ -33,6 +33,7 @@ class RouterPresenter extends Presenter
         $this->data['description'] = $this->presenter->header['description'];
         $this->data['keywords'] = $this->presenter->header['keywords'];
         $this->data['lang'] = getLang();
+        $this->data['style'] = ($_SESSION['lang'] == 'de') ? 'yellow-theme.css' : 'blue-theme.css';
 
         $this->view = 'layout';
     }

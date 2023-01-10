@@ -1,4 +1,4 @@
-<div class="records-categories">
+<div class="wrapper">
     <h1><?= $lang['header'] ?></h1>
 
     <button class="btn btn-primary"
@@ -7,12 +7,13 @@
     </button>
 
     <h2><?= $lang['seasons'] ?>:</h2>
-    <div class="records-categories-list">
+    <div class="list">
         <?php if (empty($seasons)): ?>
             <h3><?= $lang['no-seasons'] ?></h3>
         <?php endif; ?>
         <?php foreach ($seasons as $season): ?>
-            <a href="/seasons/<?= $season['season_year'] . "/" . $season['season_name'] ?>">
+            <a href="/seasons/<?= $season['season_year'] . "/" . $season['season_name'] ?>"
+               class="list-item">
                 <?= $season['season_year'] . ' ' . $season['season_name'] ?>
             </a>
         <?php endforeach; ?>

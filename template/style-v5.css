@@ -6,12 +6,12 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #222831;
-    color: rgb(241, 241, 241);
+    background-color: var(--bg);
+    color: var(--txt);
 }
 
 nav {
-    background-color: #303e4e;
+    background-color: var(--bg-light);
     height: 40px;
     margin: 5px;
     border-radius: 10px;
@@ -34,19 +34,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(241, 241, 241);
+    color: var(--txt);
     text-transform: uppercase;
-
 }
 
 article {
-    padding: 10px;
     width: 100%;
-}
-
-.records-categories, .manage, .records {
-    width: fit-content;
-    margin: auto;
+    padding: 10px;
 }
 
 article h1 {
@@ -57,7 +51,7 @@ article h1 {
 
 article h1 a {
     text-decoration: none;
-    color: rgb(241, 241, 241);
+    color: var(--txt);
 }
 
 article h2 {
@@ -72,20 +66,85 @@ article h3 {
     margin-bottom: 5px;
 }
 
-.records-categories-list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
+.wrapper {
+    width: fit-content;
+    margin: auto;
 }
 
-.records-categories-list a {
-    text-decoration: none;
-    color:rgb(220, 220, 220);
-    margin-bottom: 5px;
+.list {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    gap: 8px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     font-size: 18px;
-    background-color: #303e4e;
-    padding: 3px 7px;
-    border-radius: 7px;
+    background-color: var(--bg-light);
+    padding: 7px 10px;
+    border-radius: 15px 0;
+    filter: drop-shadow(2px 2px 1px black);
+    transition: .3s;
+}
+
+a.list-item,
+.list-item a {
+    text-decoration: none;
+    color:var(--txt);
+}
+
+a.list-item:hover {
+    background-color: var(--bg-light-darker)
+}
+
+.list-item-m { margin: 8px 6px; }
+.list-item-r { padding-right: 30px; }
+
+.list-item img {
+    max-height: 22px;
+    max-width: 22px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.level-list {
+    display: inline-block;
+}
+
+.level-section {
+    float: left;
+}
+
+.remove {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove-tab {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.remove-tab-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .btn {
@@ -101,19 +160,19 @@ article h3 {
 }
 
 .btn-primary {
-    background: #21E6C1;
-    border: 1px solid #12C8A5;
-    color: #000;
+    background: var(--primary);
+    border: 1px solid var(--primary-darker);
+    color: var(--txt-neg);
 }
 
 .btn-primary:hover {
-    background: #12C8A5;
+    background: var(--primary-darker);
 }
 
 .btn-gray{
     border: 1px solid #4d4d4d;
     background: #707070;
-    color: #000;
+    color: var(--txt-neg);
 }
 
 .btn-gray:hover {
@@ -125,18 +184,13 @@ article h3 {
     transform: translateY(3px);
 }
 
-.remove-buttons button:active {
-    transition-property: none;
-    transform: translateY(0px);
-}
-
 form {
     display: flex;
     flex-direction: column;
 }
 
 .form-label {
-    color: #fff;
+    color: var(--txt);
     opacity: 85%;
     margin-bottom: 5px;
 }
@@ -155,10 +209,10 @@ form {
     font-size: 1rem;
     line-height: 1.5rem;
     padding: 0.25rem 0.4rem;
-    color: rgba(255, 255, 255, 0.9);
-    background-color: #303e4e;
+    color: var(--txt);
+    background-color: var(--bg-light);
     background-clip: padding-box;
-    border: 1px solid #303e4e;
+    border: 1px solid var(--bg-light);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -168,10 +222,10 @@ form {
 
 .form-control:focus {
     color: rgba(255, 255, 255, 0.9);
-    background-color: #303e4e;
-    border-color: #21E6C1;
+    background-color: var(--bg-light);
+    border-color: var(--primary);
     outline: 0;
-    box-shadow: 0 0 0.2rem 0.2rem #12C8A5;
+    box-shadow: 0 0 0.2rem 0.2rem var(--primary-darker);
     caret-color: white;
 }
 
@@ -179,9 +233,9 @@ form {
 .form-control:-webkit-autofill:hover, 
 .form-control:-webkit-autofill:focus, 
 .form-control:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px #303e4e inset;
-    box-shadow: 0 0 0px 1000px #303e4e inset;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-light) inset;
+    box-shadow: 0 0 0px 1000px var(--bg-light) inset;
+    -webkit-text-fill-color: var(--txt);
 }
 
 .form-check {
@@ -201,9 +255,9 @@ form {
     height: 1em;
     margin-top: 0.45em;
     vertical-align: top;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: #303e4e;
-    border: 1px solid #303e4e;
+    color: var(--txt-neg);
+    background-color: var(--bg-light);
+    border: 1px solid var(--bg-light);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -227,14 +281,14 @@ form {
 }
 
 .form-check-input:focus {
-    border-color: #12C8A5;
+    border-color: var(--primary-darker);
     outline: 0;
-    box-shadow: 0 0 0.2rem 0.2rem #12C8A5;
+    box-shadow: 0 0 0.2rem 0.2rem var(--primary-darker);
 }
 
 .form-check-input:checked {
-    background-color: #21E6C1;
-    border-color: #21E6C1;
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -252,68 +306,4 @@ form {
 
 .mt-15 {
     margin-top: 15px;
-}
-
-.records-list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-.records-list a {
-    text-decoration: none;
-    color:rgb(220, 220, 220);
-}
-
-.records-list-item {
-    position: relative;
-    margin-bottom: 5px;
-    font-size: 18px;
-    background-color: #303e4e;
-    padding: 3px 7px;
-    border-radius: 7px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    padding-right: 25px;
-}
-
-.no-remove {
-    padding-right: 7px;;
-}
-
-.records-list-item img {
-    max-height: 22px;
-    max-width: 22px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.remove {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.remove-tab {
-    background-color: #303e4e;
-    padding: 15px;
-    border-radius: 15px;
-}
-
-.remove-tab-buttons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
 }

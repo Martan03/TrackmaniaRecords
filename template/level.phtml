@@ -1,4 +1,4 @@
-<div class="records">
+<div class="wrapper">
     <h1>
         <a href="/seasons/<?= $season['season_year'] . '/' . $season['season_name'] ?>">
             <?= $season['season_year'] . ' ' . $season['season_name'] ?>
@@ -14,12 +14,12 @@
         <?= $lang['add-record'] ?>
     </button>
 
-    <div class="records-list">
+    <div class="list">
         <?php if (!isset($records) || empty($records)): ?>
             <h3><?= $lang['no-records'] ?></h3>
         <?php endif; ?>
         <?php foreach ($records as $record): ?>
-            <div class="records-list-item">
+            <div class="list-item list-item-r">
                 <a href="/profile/<?= $record['record_holder'] ?>"><i><?= $record['record_holder'] ?></i></a>
                 <p><?= $record['record_time'] ?></p>
                 <img onclick="show_remove('/seasons/<?= $url . '/remove/' . $record['record_id'] ?>')"

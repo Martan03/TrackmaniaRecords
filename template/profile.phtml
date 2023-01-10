@@ -1,4 +1,4 @@
-<div class="manage">
+<div class="wrapper">
     <h1><?= $profile_name ?>:</h1>
 
     <h2><?= $lang['records'] ?>:</h2>
@@ -8,9 +8,9 @@
     <?php foreach ($seasons as $season): ?>
         <?php if (isset($records[$season['season_id']]) && !empty($records[$season['season_id']])): ?>
             <h3><?= $season['season_year'] . ' ' . $season['season_name'] ?></h3>
-            <div class="records-list">
+            <div class="list">
                 <?php foreach ($records[$season['season_id']] as $record): ?>
-                    <div class="records-list-item no-remove">
+                    <div class="list-item">
                         <b><?= $record['record_level'] ?></b>
                         <p><?= $record['record_time'] ?></p>
                     </div>

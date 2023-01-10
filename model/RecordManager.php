@@ -66,10 +66,10 @@ class RecordManager
             ', array($season, $i + 1));
             if (empty($rec))
             {
-                $records[$i + 1] = $this->getNotSetRecord($season, $i + 1);
+                $records[$i] = $this->getNotSetRecord($season, $i + 1);
                 continue;
             }
-            $records[$i + 1] = $rec;
+            $records[$i] = $rec;
         }
         return $records;
     }

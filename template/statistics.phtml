@@ -1,12 +1,12 @@
-<div class="manage">
+<div class="wrapper">
     <h1><?= $lang['statistics'] ?>:</h1>
 
-    <div class="records-list">
+    <div class="list">
         <?php if (!isset($statistics) || empty($statistics)): ?>
             <h3><?= $lang['no-statistics'] ?></h3>
         <?php endif; ?>
         <?php foreach ($statistics as $statistic): ?>
-            <div class="records-list-item no-remove">
+            <div class="list-item">
                 <a href="/profile/<?= $statistic['record_holder'] ?>">
                     <i><?= $statistic['record_holder'] ?></i>
                 </a>

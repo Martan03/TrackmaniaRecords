@@ -1,0 +1,9 @@
+:root {
+    --bg: #222831;
+    --bg-light: #303e4e;
+    --bg-light-darker: #2a3848;
+    --txt: rgb(241, 241, 241);
+    --txt-neg: #000;
+    --primary: #21E6C1;
+    --primary-darker: #12C8A5;
+}

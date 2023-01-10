@@ -1,6 +1,18 @@
 <div class="wrapper">
     <h1><?= $season['season_year'] . ' ' . $season['season_name']?></h1>
 
+    <h2>Top 3:</h2>
+    <div class="list">
+        <?php foreach ($top as $t): ?>
+            <div class="list-item">
+                <a href="/profile/<?= $t['record_holder'] ?>">
+                    <i><?= $t['record_holder'] ?></i>
+                </a>
+                <p><?= $t['record_number'] ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
     <div class="level-list">
         <?php for ($i = 0; $i < count($records); $i++): ?>
             <?php if ($i == 0): ?>

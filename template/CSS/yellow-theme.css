@@ -1,9 +1,30 @@
 :root {
     --bg: #181818;
     --bg-light: #222222;
-    --bg-light-darker: #2a3848;
+    --bg-light-darker: #555555;
     --txt: rgb(241, 241, 241);
     --txt-neg: #000;
     --primary: #fff700;
     --primary-darker: #d4cd15;
+}
+
+.list-item {
+    border: 1px solid var(--bg-light-darker);
+    filter: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    padding: 7px 10px;
+    border-radius: 15px 0;
+    transition: .3s;
+    position: relative;
+}
+
+.list-item-r { padding-right: 30px; }
+
+a.list-item:hover {
+    border: 1px solid var(--primary);
+    background-color: var(--bg-light);
 }

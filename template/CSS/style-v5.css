@@ -89,6 +89,7 @@ article h3 {
     border-radius: 15px 0;
     filter: drop-shadow(2px 2px 1px black);
     transition: .3s;
+    position: relative;
 }
 
 a.list-item,

@@ -47,6 +47,6 @@ I'd like to add more statistics though.
 
 ## Links
 
-- *Author:* [Martan03](https://github.com/Martan03)
-- *GitHub repository:* [TrackmaniaRecords](https://github.com/Martan03/TrackmaniaRecords)
-- *Author website:* [martan03.github.io/Portfolio](https://martan03.github.io/Portfolio/)
+- **Author:** [Martan03](https://github.com/Martan03)
+- **GitHub repository:** [TrackmaniaRecords](https://github.com/Martan03/TrackmaniaRecords)
+- **Author website:** [martan03.github.io/Portfolio](https://martan03.github.io/Portfolio/)

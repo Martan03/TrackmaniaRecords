@@ -1,7 +1,7 @@
 # Trackmania Records
 
 Me and my friends play Trackmania and we like to compete with each other.
-So I desided to make website, so we can upload our records and share them with each other.
+So I decided to make website, so we can upload our records and share them with each other.
 
 ## Programming Language
 

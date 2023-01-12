@@ -6,7 +6,7 @@ So I decided to make website, so we can upload our records and share them with e
 ## Programming Language
 
 I decided to code in PHP, because I know it better than JS and I also needed database connection.
-I used MVC (Model View Controller), in my opinion, it's good way to code easy way. If I used some framework, it would be
+I used MVP (Model View Presenter), in my opinion, it's good way to code easy way. If I used some framework, it would be
 bit of overkill for project this size (at least I though). But also it's better than putting everything in one file.  
 I decided to make this website mutlilanguage as well, so I implemented English, German and Czech.
 

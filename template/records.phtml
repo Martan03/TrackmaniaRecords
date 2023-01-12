@@ -2,39 +2,41 @@
     <h1><?= $season['season_year'] . ' ' . $season['season_name']?></h1>
 
     <h2>Top 3:</h2>
-    <div class="list">
-        <?php foreach ($top as $t): ?>
-            <div class="list-item">
-                <a href="/profile/<?= $t['record_holder'] ?>">
-                    <i><?= $t['record_holder'] ?></i>
-                </a>
-                <p><?= $t['record_number'] ?></p>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-    <div class="level-list">
-        <?php for ($i = 0; $i < count($records); $i++): ?>
-            <?php if ($i == 0): ?>
-                <div class="level-section">
-            <?php elseif ($i % 5 == 0): ?>
+    <div class="skewed">
+        <div class="list">
+            <?php foreach ($top as $t): ?>
+                <div class="list-item unskewed">
+                    <a href="/profile/<?= $t['record_holder'] ?>">
+                        <i><?= $t['record_holder'] ?></i>
+                    </a>
+                    <p><?= $t['record_number'] ?></p>
                 </div>
-                <div class="level-section">
-            <?php endif; ?>
-            <a class="list-item list-item-m"
-               href="/seasons/<?= $season['season_year'] . '/' . 
-                     $season['season_name'] . '/' . $records[$i]['record_level'] ?>">
-                <b><?= sprintf("%02d", $records[$i]['record_level']) ?></b>
-                <i><?= $records[$i]['record_holder'] ?></i>
-                <?php if (empty($records[$i]['record_time']) || $records[$i]['record_time'] == ''): ?>
-                    <p><?= $lang['no-record'] ?></p>
-                <?php else: ?>
-                    <p><?= $records[$i]['record_time'] ?></p>
+            <?php endforeach; ?>
+        </div>
+    
+        <div class="level-list">
+            <?php for ($i = 0; $i < count($records); $i++): ?>
+                <?php if ($i == 0): ?>
+                    <div class="level-section">
+                <?php elseif ($i % 5 == 0): ?>
+                    </div>
+                    <div class="level-section">
                 <?php endif; ?>
-            </a>
-            <?php if ($i + 1 == count($records)): ?>
-                </div>
-            <?php endif; ?>
-        <?php endfor; ?>
+                <a class="list-item unskewed list-item-m"
+                   href="/seasons/<?= $season['season_year'] . '/' . 
+                         $season['season_name'] . '/' . $records[$i]['record_level'] ?>">
+                    <b><?= sprintf("%02d", $records[$i]['record_level']) ?></b>
+                    <i><?= $records[$i]['record_holder'] ?></i>
+                    <?php if (empty($records[$i]['record_time']) || $records[$i]['record_time'] == ''): ?>
+                        <p><?= $lang['no-record'] ?></p>
+                    <?php else: ?>
+                        <p><?= $records[$i]['record_time'] ?></p>
+                    <?php endif; ?>
+                </a>
+                <?php if ($i + 1 == count($records)): ?>
+                    </div>
+                <?php endif; ?>
+            <?php endfor; ?>
+        </div>
     </div>
 </div>

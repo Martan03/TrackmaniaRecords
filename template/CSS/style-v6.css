@@ -92,6 +92,15 @@ article h3 {
     position: relative;
 }
 
+.skewed {
+    transform: skew(-10deg);
+    padding-inline: 40px;
+}
+
+.unskewed * {
+    transform: skew(10deg);
+}
+
 a.list-item,
 .list-item a {
     text-decoration: none;
@@ -307,4 +316,15 @@ form {
 
 .mt-15 {
     margin-top: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    .skewed {
+        transform: none;
+        padding-inline: 0;
+    }
+
+    .unskewed * {
+        transform: none;
+    }
 }

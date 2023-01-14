@@ -46,7 +46,7 @@ class RecordManager
             ORDER BY `record_time` ASC
         ', array($season, $level));
     }
-
+    
     /**
      * Loads best time from each level in given season
      * @param int $id of the season
@@ -54,23 +54,27 @@ class RecordManager
      */
     public function getSeasonLevelsRecords(int $season) : array
     {
+        $rec = Db::queryAll('
+            SELECT *
+            FROM records r
+            WHERE record_time = (
+                SELECT MIN(record_time)
+                FROM records
+                WHERE record_level = r.record_level AND record_season = ?
+            ) AND record_season = ?
+            ORDER BY record_level
+        ', array($season, $season));
+
         $records = array();
+        $count = 0;
         for ($i = 0; $i < 25; $i++)
         {
-            $rec = Db::queryOne('
-                SELECT *
-                FROM `records`
-                WHERE `record_season` = ? AND `record_level` = ?
-                ORDER BY `record_time` ASC
-                LIMIT 1
-            ', array($season, $i + 1));
-            if (empty($rec))
-            {
-                $records[$i] = $this->getNotSetRecord($season, $i + 1);
-                continue;
-            }
-            $records[$i] = $rec;
+            if (isset($rec[$count]) && $rec[$count]['record_level'] == $i + 1)
+                array_push($records, $rec[$count++]);
+            else
+                array_push($records, $this->getNotSetRecord($season, $i + 1));
         }
+
         return $records;
     }
 

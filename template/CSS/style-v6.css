@@ -8,6 +8,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg);
     color: var(--txt);
+    overflow-x: hidden;
 }
 
 nav {
@@ -68,6 +69,7 @@ article h3 {
 
 .wrapper {
     width: fit-content;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -76,25 +78,29 @@ article h3 {
     flex-direction: column;
     margin: 10px 0;
     gap: 8px;
+    padding-inline: 6px;
 }
 
 .list-item {
+    border: 1px solid var(--bg-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: px;
     gap: 15px;
     font-size: 18px;
-    background-color: var(--bg-light);
     padding: 7px 10px;
     border-radius: 15px 0;
-    filter: drop-shadow(2px 2px 1px black);
     transition: .3s;
     position: relative;
+    background-color: var(--bg-light);
+    width: 250px;
 }
 
 .skewed {
     transform: skew(-10deg);
     padding-inline: 40px;
+    max-width: 100%;
 }
 
 .unskewed * {

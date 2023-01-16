@@ -10,7 +10,6 @@ I used MVP (Model View Presenter), in my opinion, it's good way to code easy way
 bit of overkill for project this size (at least I though). But also it's better than putting everything in one file.  
 I decided to make this website mutlilanguage as well, so I implemented English, German and Czech.
 
-
 ## Website overview
 
 ### Seasons
